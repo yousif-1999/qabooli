@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>قبولي — مساعد القبول الجامعي</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div>
+    <div class="brand">قبولي</div>
+    <div class="subtitle">مساعد اختيار القبول الجامعي — 2025/2026</div>
+  </div>
+  <div class="source-badge">بيانات مبنية على الأدلة المرفوعة</div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <h1>اعرف التخصصات التي تنطبق عليها ضوابطك</h1>
+    <p>أدخل الفرع والمعدل وبعض المعلومات الأساسية، ثم يعرض لك النظام القنوات والخيارات المتاحة وفق البيانات المدخلة. القبول المركزي النهائي يعتمد على المنافسة والاختيارات، وليس المعدل وحده.</p>
+  </section>
+
+  <section class="card form-card">
+    <div class="section-title">بيانات الطالب</div>
+    <div class="form-grid">
+      <div>
+        <label>الفرع الدراسي</label>
+        <select id="branch">
+          <option value="علمي">علمي</option>
+          <option value="ادبي">أدبي</option>
+          <option value="فنون">فنون</option>
+        </select>
+      </div>
+      <div>
+        <label>المعدل</label>
+        <input id="average" inputmode="decimal" placeholder="87.50">
+      </div>
+      <div>
+        <label>الجنس</label>
+        <select id="gender">
+          <option value="">غير محدد</option>
+          <option value="ذكر">ذكر</option>
+          <option value="انثى">أنثى</option>
+        </select>
+      </div>
+      <div>
+        <label>المحافظة</label>
+        <select id="province">
+          <option value="">اختر المحافظة</option>
+          <option>بغداد</option><option>بابل</option><option>الأنبار</option>
+          <option>البصرة</option><option>نينوى</option><option>كركوك</option>
+          <option>صلاح الدين</option><option>ديالى</option><option>كربلاء</option>
+          <option>النجف</option><option>واسط</option><option>ميسان</option>
+          <option>ذي قار</option><option>المثنى</option><option>القادسية</option>
+        </select>
+      </div>
+    </div>
+    <button id="checkBtn" class="primary">🔎 اعرف فرصي</button>
+  </section>
+
+  <section id="summary" class="summary-grid hidden"></section>
+
+  <section id="results" class="results-grid hidden"></section>
+
+  <section class="card source-card">
+    <div class="section-title">المصادر المعتمدة</div>
+    <p>الحكومي: دليل الطالب للقبول المركزي للسنة الدراسية 2025–2026.</p>
+    <p>الأهلي: دليل الجامعات والكليات الأهلية للسنة الدراسية 2025–2026.</p>
+    <div class="note">هذه النسخة تأسيسية لمحرك «قبولي». سيتم توسيع قاعدة البرامج والقنوات والضوابط من الدليلين قبل اعتمادها كمرجع نهائي للطلاب.</div>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
