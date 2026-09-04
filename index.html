@@ -3,73 +3,101 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>قبولي — مساعد القبول الجامعي</title>
+<title>قبولي | مستشار القبول الجامعي</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="topbar">
   <div>
     <div class="brand">قبولي</div>
-    <div class="subtitle">مساعد اختيار القبول الجامعي — 2025/2026</div>
+    <div class="subtitle">مستشار القبول الجامعي — 2025/2026</div>
   </div>
-  <div class="source-badge">الحدود الدنيا الحكومية 2025–2026 + دليل الأهلي 2025–2026</div>
+  <div class="year-badge">حكومي + أهلي</div>
 </header>
 
 <main class="container">
   <section class="hero">
-    <h1>اعرف التخصصات التي تنطبق عليها ضوابطك</h1>
-    <p>أدخل الفرع والمعدل، وسيقارن التطبيق معدلك بالحد الأدنى الفعلي المنشور للقبول المركزي 2025–2026. في الحكومي ستظهر لك النتائج المطابقة فعلًا، مع الجامعة والكلية والقسم والموقع والحد الأدنى والفرع والجنس. أما الأهلي فتظهر البيانات الواردة في الدليل، مع توضيح الحالات التي لا يثبت فيها الفرع داخل هذا الدليل.</p>
+    <h1>أين يمكن أن يُقبل معدلي؟</h1>
+    <p>أدخل الفرع والمعدل ونوع الدراسة، وسيقارن التطبيق بياناتك مع الحدود الدنيا وقواعد القبول المنشورة للسنة الدراسية 2025–2026، مع إظهار القسط والموقع للأقسام الأهلية.</p>
   </section>
 
   <section class="card form-card">
     <div class="section-title">بيانات الطالب</div>
     <div class="form-grid">
       <div>
-        <label>الفرع الدراسي</label>
+        <label>الفرع</label>
         <select id="branch">
           <option value="علمي">علمي</option>
+          <option value="أحيائي">أحيائي</option>
           <option value="ادبي">أدبي</option>
           <option value="فنون">فنون</option>
+          <option value="مهني">مهني</option>
         </select>
       </div>
       <div>
         <label>المعدل</label>
-        <input id="average" inputmode="decimal" placeholder="87.50">
+        <input id="average" inputmode="decimal" placeholder="67.00">
       </div>
       <div>
         <label>الجنس</label>
         <select id="gender">
           <option value="">غير محدد</option>
           <option value="ذكر">ذكر</option>
-          <option value="انثى">أنثى</option>
+          <option value="أنثى">أنثى</option>
         </select>
       </div>
       <div>
-        <label>المحافظة</label>
-        <select id="province">
-          <option value="">اختر المحافظة</option>
-          <option>بغداد</option><option>بابل</option><option>الأنبار</option>
-          <option>البصرة</option><option>نينوى</option><option>كركوك</option>
-          <option>صلاح الدين</option><option>ديالى</option><option>كربلاء</option>
-          <option>النجف</option><option>واسط</option><option>ميسان</option>
-          <option>ذي قار</option><option>المثنى</option><option>القادسية</option>
+        <label>نوع الدراسة</label>
+        <select id="study">
+          <option value="all">الصباحي والمسائي</option>
+          <option value="morning">الصباحية</option>
+          <option value="evening">المسائية</option>
         </select>
       </div>
+      <div>
+        <label>نوع المؤسسة</label>
+        <select id="sector">
+          <option value="all">الحكومي والأهلي</option>
+          <option value="government">الحكومي</option>
+          <option value="private">الأهلي</option>
+        </select>
+      </div>
+      <div>
+        <label>بحث داخل النتائج</label>
+        <input id="search" placeholder="مثال: طب، قانون، كركوك">
+      </div>
     </div>
-    <button id="checkBtn" class="primary">🔎 اعرف فرصي</button>
+    <button id="checkBtn" class="primary">🔎 اعرض نتائج قبولي</button>
   </section>
 
+  <section id="warnings" class="notice hidden"></section>
   <section id="summary" class="summary-grid hidden"></section>
 
-  <section id="results" class="results-grid hidden"></section>
+  <section class="results-head hidden" id="resultsHead">
+    <div>
+      <h2>النتائج</h2>
+      <div class="muted">المؤهلية الحكومية مبنية على الحد الأدنى المنشور، أما الأهلي فيعرض بيانات الدليل والأجور المتاحة.</div>
+    </div>
+    <div class="result-controls">
+      <select id="sort">
+        <option value="minAsc">الأقرب لمعدلي</option>
+        <option value="name">الاسم</option>
+        <option value="location">الموقع</option>
+      </select>
+    </div>
+  </section>
 
-  <section class="card source-card">
-    <div class="section-title">المصادر المعتمدة</div>
-    <p>الحكومي: دليل الطالب للقبول المركزي للسنة الدراسية 2025–2026.</p>
-    <p>الأهلي: دليل الجامعات والكليات الأهلية للسنة الدراسية 2025–2026.</p>
-    <div class="note">هذه النسخة تأسيسية لمحرك «قبولي». سيتم توسيع قاعدة البرامج والقنوات والضوابط من الدليلين قبل اعتمادها كمرجع نهائي للطلاب.</div>
+  <section id="results" class="results-grid hidden"></section>
+  <button id="moreBtn" class="more hidden">عرض المزيد</button>
+
+  <section class="card rules-card">
+    <div class="section-title">مصادر وضوابط البيانات</div>
+    <p>الحدود الدنيا الحكومية مأخوذة من ملف «الحدود الدنيا للقبول المركزي» للسنة الدراسية 2025–2026، وهو يوضح اسم الجامعة/الكلية والحد الأدنى والمعدل والفرع والجنس. </p>
+    <p>أجور الأقسام الأهلية مأخوذة من «دليل الكليات الأهلية» المرسل سابقًا، ويعرض أجور الدراسة الصباحية والمسائية لكل قسم، مع التنبيه إلى الموقع الجغرافي والملحوظات. </p>
+    <p class="warning-text"><strong>تنبيه مهم:</strong> ملف ضوابط القبول الأهلي المرفوع أخيرًا يحمل على غلافه السنة الدراسية 2024–2025، لذلك لا يستخدم التطبيق هذه الضوابط القديمة على أنها ضوابط 2025–2026 دون تمييز. عند توفر دليل ضوابط الأهلي 2025–2026 سنربطه بالمحرك مباشرة.</p>
   </section>
 </main>
+<script src="data.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
