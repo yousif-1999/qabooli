@@ -1,5 +1,5 @@
 
-let G=[],P=[],state={rows:[],shown:24};
+const G=window.Q_GOVERNMENT||[],P=[...Array(7)].flatMap((_,i)=>window["Q_PRIVATE_"+String(i+1).padStart(2,"0")]||[]),state={rows:[],shown:24};
 const q=id=>document.getElementById(id);
 function num(x){const a="٠١٢٣٤٥٦٧٨٩",b="۰۱۲۳۴۵۶۷۸۹";return Number([...String(x||"")].map(c=>{let i=a.indexOf(c);if(i>=0)return String(i);i=b.indexOf(c);return i>=0?String(i):c}).join("").replace(/,/g,""))||0}
 function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]))}
@@ -137,15 +137,6 @@ function card(r){
  }
  return `<article class="result-card"><div class="result-head"><div><div class="result-title">${esc(cleanDept(r.program))}</div><div class="result-sub">${esc(r.institution)}</div><div class="location-chip">📍 ${esc(r.location)}</div></div><span class="tag ok">حكومي</span></div><div class="body"><div class="row"><span>الدراسة</span><b>${esc(r.studyType)}</b></div><div class="row"><span>الفرع</span><b>${esc(r.branch)}</b></div><div class="row"><span>الحد الأدنى</span><b>${Number(r.displayMin).toFixed(2)}%</b></div><div class="row"><span>معدلك</span><b>${num(q("average").value).toFixed(2)}%</b></div><div class="row"><span>القسط الصباحي</span><b class="free">مجاني</b></div>${r.studyType==="مسائي"?`<div class="row"><span>الحد الأعلى للأجور المسائية</span><b>${money(r.fee)}</b></div>`:""}<div class="status status-ok">معدل الطالب مستوفٍ للحد الأدنى</div><div class="source">المصدر: الحدود الدنيا للقبول المركزي 2025–2026 — صفحة ${esc(r.page)}.</div></div></article>`;
 }
-async function loadData(){
- const manifest=await fetch("data/manifest.json").then(r=>{if(!r.ok)throw new Error("manifest "+r.status);return r.json()});
- G=await fetch(manifest.government).then(r=>{if(!r.ok)throw new Error("government "+r.status);return r.json()});
- const parts=await Promise.all(manifest.private.map(u=>fetch(u).then(r=>{if(!r.ok)throw new Error(u+" "+r.status);return r.json()})));
- P=parts.flat();
-}
-async function init(){
- const btn=q("checkBtn"); btn.disabled=true; btn.textContent="⏳ تحميل قاعدة البيانات...";
- try{await loadData(); btn.disabled=false; btn.textContent="🔎 اعرض النتائج";}
- catch(e){console.error(e); btn.textContent="تعذر تحميل البيانات"; q("alerts").classList.remove("hidden"); q("alerts").textContent="تعذر تحميل قاعدة البيانات. ارفع مجلد data كاملًا إلى GitHub.";}
-}
-q("checkBtn").addEventListener("click",apply);q("sort").addEventListener("change",render);q("moreBtn").addEventListener("click",()=>{state.shown+=24;render()});init();
+q("checkBtn").disabled=false;
+q("checkBtn").textContent="🔎 اعرض النتائج";
+q("checkBtn").addEventListener("click",apply);q("sort").addEventListener("change",render);q("moreBtn").addEventListener("click",()=>{state.shown+=24;render()});
