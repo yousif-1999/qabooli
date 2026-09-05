@@ -1,0 +1,13 @@
+{
+  "year": "2025-2026",
+  "government": "data/government.json",
+  "private": [
+    "data/private-01.json",
+    "data/private-02.json",
+    "data/private-03.json",
+    "data/private-04.json",
+    "data/private-05.json",
+    "data/private-06.json",
+    "data/private-07.json"
+  ]
+}
