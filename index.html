@@ -3,31 +3,45 @@
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>قبولي | مستشار القبول الجامعي</title><link rel="stylesheet" href="style.css"></head>
 <body>
-<header class="topbar"><div><div class="brand">قبولي</div><div class="subtitle">مستشار القبول الجامعي — 2025–2026</div></div><div class="year-badge">حكومي + أهلي</div></header>
+<header class="topbar">
+  <div><div class="brand">قبولي</div><div class="subtitle">مستشار القبول الجامعي — 2025–2026</div></div>
+  <div class="year-badge">حكومي + أهلي</div>
+</header>
 <main class="container">
-<section class="hero"><h1>أين يمكن أن يُقبل معدلي؟</h1><p>اختر الفرع بدقة. وللفرع المهني اختر التخصص المهني حتى لا تظهر أقسام غير مناسبة لمسارك.</p></section>
+<section class="hero"><h1>أين يمكن أن يُقبل معدلي؟</h1>
+<p>أدخل الفرع والمعدل بدقة. تظهر الأقسام فقط عندما يكون معدلك مساويًا أو أعلى من الحد الأدنى المعتمد للقسم.</p></section>
+
 <section class="card form-card"><div class="section-title">بيانات الطالب</div>
 <div class="form-grid">
-<div><label>الفرع الدراسي</label><select id="branch"><option value="علمي">علمي</option><option value="أحيائي">أحيائي</option><option value="تطبيقي">تطبيقي</option><option value="أدبي">أدبي</option><option value="مهني">مهني</option><option value="زراعي">زراعي</option><option value="حاسوب وتقنية المعلومات">حاسوب وتقنية المعلومات</option><option value="فنون">فنون</option><option value="فنون تطبيقية">فنون تطبيقية</option></select></div>
+<div><label>الفرع الدراسي</label><select id="branch">
+<option value="علمي">علمي</option><option value="أحيائي">أحيائي</option><option value="تطبيقي">تطبيقي</option><option value="أدبي">أدبي</option>
+<option value="مهني">مهني</option><option value="زراعي">زراعي</option><option value="حاسوب وتقنية المعلومات">حاسوب وتقنية المعلومات</option><option value="فنون">فنون</option><option value="فنون تطبيقية">فنون تطبيقية</option>
+</select></div>
 <div id="vocWrap" class="hidden"><label>التخصص المهني</label><select id="vocational">
-<option value="">اختر التخصص</option>
+<option value="">اختر التخصص المهني</option>
 <optgroup label="التجاري"><option value="تجاري:عام">تجاري — عام</option><option value="تجاري:إدارة">تجاري — إدارة</option><option value="تجاري:محاسبة">تجاري — محاسبة</option><option value="تجاري:اقتصاد">تجاري — اقتصاد</option><option value="تجاري:إدارة مخازن">تجاري — إدارة مخازن</option><option value="تجاري:سياحة وإدارة فنادق">تجاري — سياحة وإدارة فنادق</option></optgroup>
 <optgroup label="الصناعي"><option value="صناعي:عام">صناعي — عام</option><option value="صناعي:ميكانيك">صناعي — ميكانيك</option><option value="صناعي:سيارات">صناعي — سيارات</option><option value="صناعي:كهرباء">صناعي — كهرباء</option><option value="صناعي:إلكترونيات وسيطرة">صناعي — إلكترونيات وسيطرة</option><option value="صناعي:اتصالات">صناعي — اتصالات</option><option value="صناعي:حاسبات">صناعي — حاسبات</option><option value="صناعي:أجهزة طبية">صناعي — أجهزة طبية</option><option value="صناعي:تبريد وتكييف">صناعي — تبريد وتكييف</option><option value="صناعي:تكنولوجيا الإعلام">صناعي — تكنولوجيا الإعلام</option><option value="صناعي:بتروكيمياويات">صناعي — بتروكيمياويات</option><option value="صناعي:تكرير النفط ومعالجة الغاز">صناعي — تكرير النفط ومعالجة الغاز</option><option value="صناعي:بناء">صناعي — بناء</option><option value="صناعي:رسم هندسي">صناعي — رسم هندسي</option><option value="صناعي:مساحة">صناعي — مساحة</option><option value="صناعي:إنتاج">صناعي — إنتاج</option><option value="صناعي:معادن">صناعي — معادن</option><option value="صناعي:ميكاترونكس">صناعي — ميكاترونكس</option></optgroup>
 </select></div>
-<div><label>المعدل</label><input id="average" inputmode="decimal" placeholder="67.00"></div>
+<div><label>المعدل</label><input id="average" inputmode="decimal" placeholder="60.00"></div>
 <div><label>الجنس</label><select id="gender"><option value="">غير محدد</option><option value="ذكر">ذكر</option><option value="أنثى">أنثى</option></select></div>
 <div><label>الدراسة</label><select id="study"><option value="all">الصباحي + المسائي</option><option value="morning">الصباحية</option><option value="evening">المسائية</option></select></div>
 <div><label>القطاع</label><select id="sector"><option value="all">الحكومي + الأهلي</option><option value="government">الحكومي</option><option value="private">الأهلي</option></select></div>
-<div><label>بحث</label><input id="search" placeholder="ابحث باسم الجامعة أو الكلية أو القسم"></div>
+<div><label>بحث</label><input id="search" placeholder="القسم أو الكلية أو الجامعة"></div>
 </div>
-<button id="checkBtn" class="primary">🔎 اعرض النتائج</button></section>
-<section id="alerts" class="notice hidden"></section><section id="summary" class="summary-grid hidden"></section>
-<section id="resultsHead" class="results-head hidden"><div><h2>النتائج</h2><div class="muted">تظهر النتيجة عندما تتطابق بيانات الطالب مع قاعدة القسم، وليس لمجرد وجود الاسم في دليل الأجور.</div></div><select id="sort"><option value="near">الأقرب لمعدلي</option><option value="name">الاسم</option><option value="location">الموقع</option></select></section>
-<section id="results" class="results-grid hidden"></section><button id="moreBtn" class="more hidden">عرض المزيد</button>
-<section class="card rules-card"><div class="section-title">مصادر البيانات</div>
-<p>الحكومي: ملف الحدود الدنيا للقبول المركزي 2025–2026.</p>
-<p>الأهلي: دليل ضوابط التقديم 2025–2026 + دليل الجامعات والكليات الأهلية 2025–2026 للأقسام والمواقع والأجور.</p>
-<p class="warning-text">النتيجة الأهلية لا تعني قبولًا نهائيًا؛ الأقسام التي تخضع للمفاضلة تُعرض فقط بعد التأكد من أن فرع الطالب ومساره المهني من المسارات المذكورة في الدليل.</p>
-</section></main>
+<button id="checkBtn" class="primary">🔎 اعرض النتائج</button>
+</section>
+
+<section id="alerts" class="notice hidden"></section>
+<section id="summary" class="summary-grid hidden"></section>
+<section id="resultsHead" class="results-head hidden"><div><h2>النتائج</h2><div class="muted">59.50% لا يظهر لقسم حده 60.00%، بينما 60.00% يظهر.</div></div><select id="sort"><option value="near">الأقرب لمعدلك</option><option value="name">الاسم</option><option value="location">الموقع</option></select></section>
+<section id="results" class="results-grid hidden"></section>
+<button id="moreBtn" class="more hidden">عرض المزيد</button>
+
+<section class="card rules-card"><div class="section-title">ملاحظة منهجية</div>
+<p>النتيجة هنا تعتمد على قاعدة رياضية صريحة: <strong>معدل الطالب ≥ الحد الأدنى للقسم</strong>.</p>
+<p>الأقسام التي يذكر الدليل أنها «تخضع للمفاضلة» من دون حد رقمي لا يتم اختراع حد لها، ولذلك لا تدخل في نتائج البحث المعدلية.</p>
+<p class="warning-text">النتيجة لا تعني قبولًا نهائيًا؛ القبول النهائي قد يخضع للمنافسة والطاقة الاستيعابية وإجراءات التقديم الرسمية.</p>
+</section>
+</main>
 <script src="data.js"></script><script src="app.js"></script>
 </body></html>
