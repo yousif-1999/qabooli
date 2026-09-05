@@ -1,1 +1,78 @@
-<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>قبولي — مساعد القبول الجامعي</title><link rel="stylesheet" href="style.css"></head><body><header class="topbar"><div><div class="brand">قبولي</div><div class="subtitle">مساعد القبول الجامعي — 2025–2026</div></div><div class="year-badge">بيانات وزارة التعليم + دليل الأهلي</div></header><main class="container"><section class="hero"><h1>اعرف أين يمكنك التقديم</h1><p>أدخل الفرع والمعدل والجنس ونوع الدراسة، ليقارن التطبيق بياناتك مع الحدود الدنيا الحكومية وضوابط القبول الأهلي 2025–2026.</p></section><section class="card form-card"><div class="section-title">بيانات الطالب</div><div class="form-grid"><div><label>الفرع</label><select id="branch"><option value="علمي">علمي</option><option value="أحيائي">أحيائي</option><option value="أدبي">أدبي</option><option value="تطبيقي">تطبيقي</option><option value="فنون">فنون</option><option value="مهني">مهني</option><option value="زراعي">زراعي</option><option value="حاسوب وتقنية المعلومات">حاسوب وتقنية المعلومات</option></select></div><div><label>المعدل</label><input id="average" inputmode="decimal" placeholder="67.00"></div><div><label>الجنس</label><select id="gender"><option value="">غير محدد</option><option value="ذكر">ذكر</option><option value="أنثى">أنثى</option></select></div><div><label>الدراسة</label><select id="study"><option value="all">الصباحي + المسائي</option><option value="morning">الصباحية</option><option value="evening">المسائية</option></select></div><div><label>القطاع</label><select id="sector"><option value="all">الحكومي + الأهلي</option><option value="government">الحكومي</option><option value="private">الأهلي</option></select></div><div><label>بحث</label><input id="search" placeholder="مثال: طب، قانون، بابل"></div></div><button id="checkBtn" class="primary">🔎 اعرض النتائج</button></section><section id="summary" class="summary-grid hidden"></section><section id="alerts" class="notice hidden"></section><section id="resultsHead" class="results-head hidden"><div><h2>النتائج</h2><div class="muted">يعرض التطبيق النتائج المطابقة للبيانات المدخلة.</div></div><select id="sort"><option value="near">الأقرب لمعدلك</option><option value="name">الاسم</option><option value="location">الموقع</option></select></section><section id="results" class="results-grid hidden"></section><button id="moreBtn" class="more hidden">عرض المزيد</button><section class="card rules-card"><div class="section-title">المصادر</div><p>الحكومي: ملف الحدود الدنيا للقبول المركزي 2025–2026.</p><p>الأهلي: الدليل الإرشادي لضوابط التقديم والحدود الدنيا ومدخلات القبول 2025–2026 + دليل الجامعات والكليات الأهلية 2025–2026 للأجور والمواقع.</p><p class="warning-text">«مؤهل للتقديم» لا تعني قبولًا نهائيًا. القبول الصباحي المركزي تنافسي حسب الاختيارات والطاقة الاستيعابية، والدراسة المسائية لها ضوابط وأجور مستقلة.</p></section></main><script src="data.js"></script><script src="app.js"></script></body></html>
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>قبولي | مستشار القبول الجامعي</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div><div class="brand">قبولي</div><div class="subtitle">مستشار القبول الجامعي — 2025–2026</div></div>
+  <div class="year-badge">وزارة التعليم + أدلة الأهلي</div>
+</header>
+<main class="container">
+<section class="hero">
+  <h1>أين يمكن أن يُقبل معدلي؟</h1>
+  <p>أدخل الفرع والمعدل والشروط الخاصة بالفرع المهني، ثم يعرض التطبيق الأقسام التي تنطبق عليها بيانات الطالب فقط.</p>
+</section>
+
+<section class="card form-card">
+<div class="section-title">بيانات الطالب</div>
+<div class="form-grid">
+<div><label>الفرع الدراسي</label>
+<select id="branch">
+<option value="علمي">علمي</option><option value="أحيائي">أحيائي</option><option value="تطبيقي">تطبيقي</option>
+<option value="أدبي">أدبي</option><option value="مهني">مهني</option><option value="زراعي">زراعي</option>
+<option value="حاسوب وتقنية المعلومات">حاسوب وتقنية المعلومات</option><option value="فنون">فنون</option>
+</select></div>
+
+<div id="vocWrap" class="hidden"><label>التخصص المهني</label>
+<select id="vocational">
+<option value="">اختر التخصص المهني</option>
+<optgroup label="التجاري">
+<option value="تجاري|عام">تجاري — عام</option>
+<option value="تجاري|إدارة">تجاري — إدارة</option>
+<option value="تجاري|محاسبة">تجاري — محاسبة</option>
+<option value="تجاري|اقتصاد">تجاري — اقتصاد</option>
+<option value="تجاري|إدارة مخازن">تجاري — إدارة مخازن</option>
+<option value="تجاري|سياحة وإدارة فنادق">تجاري — سياحة وإدارة فنادق</option>
+</optgroup>
+<optgroup label="الصناعي">
+<option value="صناعي|عام">صناعي — عام</option>
+<option value="صناعي|ميكانيك">صناعي — ميكانيك</option>
+<option value="صناعي|سيارات">صناعي — سيارات</option>
+<option value="صناعي|كهرباء">صناعي — كهرباء</option>
+<option value="صناعي|إلكترونيات وسيطرة">صناعي — إلكترونيات وسيطرة</option>
+<option value="صناعي|اتصالات">صناعي — اتصالات</option>
+<option value="صناعي|حاسبات">صناعي — حاسبات</option>
+<option value="صناعي|أجهزة طبية">صناعي — أجهزة طبية</option>
+<option value="صناعي|تبريد وتكييف">صناعي — تبريد وتكييف</option>
+</optgroup>
+<option value="فنون تطبيقية|عام">الفنون التطبيقية</option>
+<option value="فنون|عام">إعدادية الفنون</option>
+</select></div>
+
+<div><label>المعدل</label><input id="average" inputmode="decimal" placeholder="67.00"></div>
+<div><label>الجنس</label><select id="gender"><option value="">غير محدد</option><option value="ذكر">ذكر</option><option value="أنثى">أنثى</option></select></div>
+<div><label>الدراسة</label><select id="study"><option value="all">الصباحي + المسائي</option><option value="morning">الصباحية</option><option value="evening">المسائية</option></select></div>
+<div><label>القطاع</label><select id="sector"><option value="all">الحكومي + الأهلي</option><option value="government">الحكومي</option><option value="private">الأهلي</option></select></div>
+<div><label>بحث</label><input id="search" placeholder="القسم أو الكلية أو الجامعة"></div>
+</div>
+<button id="checkBtn" class="primary">🔎 اعرض النتائج</button>
+</section>
+
+<section id="summary" class="summary-grid hidden"></section>
+<section id="alerts" class="notice hidden"></section>
+<section id="resultsHead" class="results-head hidden"><div><h2>النتائج</h2><div class="muted">لا تظهر الأقسام إلا بعد مطابقة الفرع والمعدل والقناة المدخلة.</div></div>
+<select id="sort"><option value="near">الأقرب لمعدلك</option><option value="name">الاسم</option><option value="location">الموقع</option></select></section>
+<section id="results" class="results-grid hidden"></section>
+<button id="moreBtn" class="more hidden">عرض المزيد</button>
+
+<section class="card rules-card">
+<div class="section-title">مصادر وضوابط</div>
+<p>الحكومي: الحدود الدنيا المركزية 2025–2026، مع بيانات الدراسة المسائية من دليل القبول المركزي.</p>
+<p>الأهلي: دليل ضوابط التقديم 2025–2026 + دليل الجامعات والكليات الأهلية 2025–2026 للأقسام والمواقع والأجور.</p>
+<p class="warning-text">بالنسبة للفرع المهني، لا يكفي اختيار «مهني» وحده؛ يجب تحديد التخصص المهني لأن دليل 2025–2026 يربط بعض الأقسام بتخصصات مهنية محددة مثل التجارة (إدارة/محاسبة/اقتصاد...) أو الصناعة (ميكانيك/سيارات/كهرباء وغيرها).</p>
+</section>
+</main>
+<script src="data.js"></script><script src="app.js"></script>
+</body></html>
